@@ -13,7 +13,8 @@ pkgbase = mingw-w64-gdcc
 	options = !buildflags
 	options = !staticlibs
 	source = mingw-w64-gdcc::git+https://github.com/DavidPH/GDCC.git#tag=v0.16.1
+	source = 0001-Core-Add-missing-include-to-Array.hpp.patch
 	sha256sums = SKIP
+	sha256sums = 519c8093def82f95f3eda5ad45eb13108bfba0db47e57a2a2eeaedd2b1a82343
 
 pkgname = mingw-w64-gdcc
-

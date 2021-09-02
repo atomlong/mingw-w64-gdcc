@@ -10,10 +10,17 @@ license=('GPL2')
 depends=('mingw-w64-gmp')
 makedepends=('git' 'cmake' 'mingw-w64-cmake')
 options=('!strip' '!buildflags' '!staticlibs')
-source=("${pkgname}"::git+https://github.com/DavidPH/GDCC.git#tag=v"${pkgver}")
-sha256sums=('SKIP')
+source=("${pkgname}"::git+https://github.com/DavidPH/GDCC.git#tag=v"${pkgver}"
+		0001-Core-Add-missing-include-to-Array.hpp.patch)
+sha256sums=('SKIP'
+			'519c8093def82f95f3eda5ad45eb13108bfba0db47e57a2a2eeaedd2b1a82343')
 
 _arches="i686-w64-mingw32 x86_64-w64-mingw32"
+
+prepare() {
+    cd ${pkgname}
+    patch -p1 -i ../0001-Core-Add-missing-include-to-Array.hpp.patch
+}
 
 build()
 {
